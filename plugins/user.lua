@@ -1,4 +1,26 @@
 return {
+  {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers", -- This is the important bit!
+    config = function()
+      load = {
+        ["core.defaults"] = {},
+        ["core.export"] = {},
+        ["core.export.markdown"] = {},
+        ["core.norg.completion"] = {},
+        ["core.norg.concealer"] = {},
+        ["core.norg.dirman"] = {
+          config = {
+            workspaces = {
+              work = "~/notes/work",
+              home = "~/notes/home",
+            }
+          }
+        }
+      }
+    end,
+  },
+
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
