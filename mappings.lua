@@ -8,10 +8,17 @@ return {
   n = {
     -- second key is the lefthand side of the map
     -- mappings seen under group name "Buffer"
-    ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
+    ["<leader>bn"] = { "<cmd>tabnext<cr>", desc = "Next tab" },
+    ["<leader>bp"] = { "<cmd>tabprevious<cr>", desc = "Previous tab" },
+    ["<leader>,"] = { "<cmd>nohlsearch<cr>", desc = "nohlsearch" },
+    ["<leader>v"] = { "<cmd>vsplit<cr>", desc = "Vertical split" },
+    ["<leader>h"] = { "<cmd>split<cr>", desc = "Horizontal split" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr)
+          require("astronvim.utils.buffer").close(
+            bufnr)
+        end)
       end,
       desc = "Pick to close",
     },
