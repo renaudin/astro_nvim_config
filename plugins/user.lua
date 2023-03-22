@@ -9,7 +9,6 @@ return {
           ["core.defaults"] = {},
           ["core.export"] = {},
           ["core.export.markdown"] = {},
-          ["core.norg.completion"] = {},
           ["core.norg.concealer"] = {},
           ["core.norg.dirman"] = {
             config = {
@@ -23,7 +22,6 @@ return {
       }
     end,
   },
-
   -- You can also add new plugins here as well:
   -- Add plugins, the lazy syntax
   -- "andweeb/presence.nvim",
