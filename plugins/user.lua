@@ -1,30 +1,21 @@
 return {
   {
-    "nvim-neorg/neorg",
-    lazy = false,
-    config = function()
-      require("neorg").setup {
-        run = ":Neorg sync-parsers", -- This is the important bit!
-        load = {
-          ["core.defaults"] = {},
-          ["core.export"] = {},
-          ["core.export.markdown"] = {},
-          ["core.norg.concealer"] = {},
-          ["core.norg.dirman"] = {
-            config = {
-              workspaces = {
-                work = "~/notes/work",
-                home = "~/notes/home",
-              }
-            }
-          }
-        }
-      }
-    end,
-  },
-  {
     "tpope/vim-fugitive",
     lazy = false
+  },
+  {
+    "vimwiki/vimwiki",
+    lazy = false,
+    init = function()
+      vim.g.vimwiki_global_ext = 0
+      vim.g.vimwiki_list = {
+        {
+          path = '/home/victor/notes',
+          syntax = 'markdown',
+          ext = '.md',
+        },
+      }
+    end,
   },
   {
     "danymat/neogen",
